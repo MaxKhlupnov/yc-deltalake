@@ -47,54 +47,17 @@ variable "datalake_subnets" {
                     ]
 
 }
-variable "ch_shards_matrix" {
-  type = any
-  description = "cluster shards"
-  default =  [
-                        {
-                        "title": "shard1_replica1"
-                        "shard_name": "shard1"
-                        "v4_cidr_blocks": "10.110.0.0/16",                       
-                        },
-                        {
-                        "title": "shard1_replica2"
-                        "shard_name": "shard1"
-                        "v4_cidr_blocks": "10.120.0.0/16",
-                        },
-                        {
-                        "title": "shard2_replica1"
-                        "shard_name": "shard2"
-                        "v4_cidr_blocks": "10.110.0.0/16",                       
-                        },
-                        {
-                        "title": "shard2_replica1"
-                        "shard_name": "shard2"
-                        "v4_cidr_blocks": "10.120.0.0/16",
-                        }
-                    ]
-}
 
-variable "kafka_subnet" {
-      description = "CIDR of kafka subnet"
+variable "dataproc_cluster_subnet" {
+      description = "CIDR of dataproc cluster subnet"
       type        = string
       default     = "10.110.0.0/16"
 }
 
-variable "pgsql_subnet" {
-      description = "CIDR of PostgreSQL subnet"
+variable "dataproc_cluster_name" {
+      description = "name of the dataproc cluster"
       type        = string
-      default     = "10.110.0.0/16"
+      default     = "dataproc-main"
 }
 
-variable "vm_subnet" {
-      description = "CIDR of student VM subnet"
-      type        = string
-      default     = "10.110.0.0/16"
-}
-
-variable "student_vm_image" {
-      description = "Student VM image id"
-      type        = string
-      default     = "fd859ncm8ncu0pov3n7j"  # ch-lab-template-22-8
-}
 
